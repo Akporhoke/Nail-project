@@ -1,0 +1,477 @@
+:root{
+
+    --clr-primary:rgb(200, 166, 177);
+    --clr-icons:rgb(250, 112, 156);
+}
+
+
+
+*{
+    margin:0rem;
+    padding:0rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+
+}
+a{
+    text-decoration: none;
+    align-content: center;
+    justify-content:center;
+}
+
+#menu{
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    overflow: visible;
+    background-color: rgba(175, 150, 150,.5);
+    color: grey;
+    z-index: 10;
+}
+
+#menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5rem;
+    color: white;
+    font-size: 2rem;
+}
+.menuOff{
+    display: none;
+}
+
+
+.menuOn{
+    display: block;
+    position: relative;
+    background-color: green;
+    width: 100vh;
+}
+
+
+body{
+display: flex;
+padding: 0rem;
+padding: 0rem;
+width: 100%;
+min-width: 20rem;
+max-width: 100%;
+height: 100%;
+color: white;
+background-color:rgba(200, 166, 177,.3);
+;
+overflow-x: hidden;
+}
+.company-display{
+    background: 
+    linear-gradient(rgba(0, 64, 32, 0.7),rgba(0, 64, 32, 0.7)),
+    url("backnail.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x:hidden;
+}
+#green-screen{
+    width: 100%;
+    max-width: 100%;
+}
+
+
+#logoSpace{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:10%;
+    width: 100%;
+    padding:3rem;
+}
+#logoSpace h1{
+    font-family:'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+}
+.otherpages{
+    display: none;
+    flex-wrap: wrap;
+}
+
+span{
+    color:var(--clr-primary);
+    text-align: center;
+    transition: all ease-in-out 1s;
+    padding: 2.5%;
+}
+span:hover{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}     
+.white-line{
+    background-color: var(--clr-primary);
+    width: 100%;
+    height: 1px;
+    overflow-x: hidden;
+}
+.otherpages{
+    display: flex;
+    gap: 2rem;   
+}
+
+.appointment{
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    font-size: 18px;
+    transition: all ease-in-out 1s;
+    color:var(--clr-primary);
+    background-color: rgb(163, 55, 163);
+;
+}
+
+.appointment:hover{
+    background: 
+       var(--clr-primary);
+    color:rgb(163, 55, 163);
+;
+    }
+
+.logo{
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.advert{
+    font-size: 5rem;
+    text-align: center;
+    overflow-y: hidden;
+}
+.advert span{
+    font-family: 'Times New Roman', Times, serif;
+    transition: all ease-in-out 1s;
+
+}
+.advert span:hover{
+    font-size: larger;
+}
+
+h3{
+    text-align: center;
+    margin: 1rem;
+    letter-spacing: 10px;
+}
+
+.img1{
+    width: 25%;
+    border-radius: 0.5rem;
+    transform: rotate(-15deg);
+
+}
+.img2{
+    width: 25%;
+    border-radius: 0.5rem;
+    transform: rotate(-0deg);
+    padding-bottom: 1rem;
+
+}
+.img3{
+    width: 25%;
+    border-radius: 0.5rem;
+    transform: rotate(15deg);
+}
+
+.overlay{
+    align-self: center;
+    justify-self:center;
+    align-items: center;
+    justify-items: center;
+    margin:0 auto;
+    margin-bottom: 0%;
+    margin-top: 10%;
+    padding: 2rem;
+    width: 30rem;
+    overflow-x: visible;
+}
+
+.relief{
+    align-self: center;
+    justify-self: center;
+    overflow-x: visible;
+}
+.About {
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-family:cursive;
+}
+.About h2{
+    font-size: 5rem;
+    color:  rgb(82, 14, 14);
+}
+.About img{
+    width: 30%;
+    height: 15%;
+    border-radius: 1rem;
+    transition: all ease-in-out 1s;
+}
+.About img:hover{
+    transform: rotate(360deg);
+    width: 35%;
+}
+.circle{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left: 35%;
+    top: 5rem;
+}
+.circle2{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    nav-left: 3rem;
+    top: 5rem;
+}
+.circle3{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left:95%;
+    bottom: 15rem;
+}
+.circle4{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left:75%;
+    bottom: 10rem;
+}
+.services{
+    color:  rgb(82, 14, 14);
+    text-align: center;
+     overflow-x: visible;
+}
+.services h2{
+    font-size: 4rem;
+    font-family:cursive;
+    overflow-x: visible;
+}
+
+.servicesDisplay{
+    display: flex;
+    align-content:center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    overflow: visible;
+
+}
+
+.servicesDisplay img{
+    width: 10rem;
+    border-radius: 1rem;
+    overflow-x: visible;
+}
+.resize{
+    height: 17.8rem;
+    overflow-x: visible;
+}
+
+.wrapper{
+    perspective: 3000px;
+    overflow-x: visible;
+}
+.card{
+    width: 340px;
+    height: 540px;
+    transform-style: preserve-3d;
+    transition: transform .8s ease-in-out;
+    overflow-x: visible;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2),-5px,-5px 10px rgba(0,0,0,0.05);
+    border-radius: 15px;
+}
+.card:hover{
+    transform: rotateY(180deg);
+     overflow-x: visible;
+}
+.front-page,
+.back-page{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow-x: visible;
+}
+.front-page{
+    background-image: url(pedicure.jpg);
+    background-size: cover;
+    overflow-x: visible;
+}
+.card-info{
+    position: absolute;
+    bottom: 50px;
+    left: 45px;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    text-align: center;
+    overflow-x: visible;
+}
+.card-title{
+    font-style: 1rem;
+    font-weight: bold;
+    overflow-x: visible;
+    font-size: 1rem;
+}
+
+.card-subtitle{
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: aqua;
+    overflow-x: visible;
+}
+.back-page{
+    background-color: #1e272e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow-x: visible;
+}
+.card-content{
+    text-align: center;
+    padding: 20px;
+    max-width: 300px;
+    overflow-x: visible;
+}
+.card-content h3{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    overflow-x: visible;
+}
+#extensions{
+    background-image: url(extentions.jpg);
+    background-size: cover;
+    overflow-x: visible;
+}
+#without-polish{
+    background-image: url(manicurewithoutpolish.jpg);
+    background-size: cover; 
+}
+#with-polish{
+background-image: url(manicurewithpolish.jpg);
+    background-size: cover; 
+}
+footer{
+    background:
+    url(footer.jpg);
+    background-color: rgba(0,0,0,.5);
+    background-blend-mode:multiply;
+    text-align: center;
+    color: rgb(255, 244, 248);
+    
+    margin-top:1rem;
+    padding: 2rem;
+    background-size:cover ;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px grey;
+    flex-wrap: wrap;
+            }
+footer h1{
+          font-size: 3rem;
+          text-align: center;
+          
+}
+
+.book{
+    background-color:rgba(200, 166, 177,.8);
+    margin:1rem; 
+    text-align: center;
+    padding:1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    flex-wrap: wrap;
+}
+
+.services{
+    overflow-x: visible;
+}
+
+.book-pedicure{
+    margin:2rem;
+    height:5rem;
+    background-color:red;
+    text-align:center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 2rem;
+}
+#whatsapp{
+    border-radius: 50%;
+}
+
+
+.menuOn
+.icon{
+    background-color: rgba(255, 255, 255,0.5);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0.7px 2px rgb(185, 92, 92);
+    cursor: pointer;
+}
+
+
+.icon-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 2rem auto;
+}
+
+
+.book-icon{
+    display: none;
+    margin-top: 2rem;
+}
+i{
+    display: none;
+    color: red;
+    font-size: 3rem;
+    align-self: center;
+    justify-self: center;
+}
+
+@media (max-width: 700px){
+    .otherpages{
+        display: none;   
+    }
+    i{
+        display: none;
+        color: blue;
+    }
+    i:hover{
+        color: brown;
+    }
+    .book-icon{
+        display: block;
+    }
+}

@@ -1,0 +1,196 @@
+*{
+    padding: 0rem;
+    border: 0rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+ 
+}
+
+body{
+    background-color:rgba(200, 166, 177,0.3);
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+   
+
+.circle{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left: 35%;
+    top: 5rem;
+}
+.circle2{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    nav-left: 3rem;
+    top: 5rem;
+}
+.circle3{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left:95%;
+    bottom: 15rem;
+}
+.circle4{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(204, 30, 111,.2);
+    border-radius: 50%;
+    position: relative;
+    left:75%;
+    bottom: 10rem;
+}
+
+#logoSpace{
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-self: center;
+    gap:10%;
+    width: 90%;
+    padding:3rem;
+    padding-top: 1rem;
+    background: 
+    linear-gradient(rgba(0, 64, 32, 0.7),rgba(0, 64, 32, 0.7)),
+    url("backnail.jpeg");
+    background-size:contain;
+    margin:2rem;
+    margin-bottom: 0%;
+    border-radius: 1rem;
+    
+}
+#logoSpace h1{
+    font-family:'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+}
+.otherpages{
+    flex-wrap: wrap;
+}
+
+span{
+    color:rgb(200, 166, 177);
+    text-align: center;
+    transition: all ease-in-out 1s;
+    padding: 2.5%;
+}
+span:hover{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}     
+.logo{
+    width: 10rem;
+    border-radius: 50%;
+}
+
+#logoSpace{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:10%;
+    width: 100%;
+    padding:3rem;
+}
+
+.appointment{
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: .5rem;
+    font-size: 1rem;
+    transition: all ease-in-out 1s;
+    color:rgb(200, 166, 177);
+    background-color: rgb(163, 55, 163);
+;
+}
+
+.appointment:hover{
+    background: 
+       rgb(200, 166, 177);
+    color:rgb(163, 55, 163);
+;
+    }
+
+section{
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    margin-top: 0 ;
+    font-size: 2rem;
+    font-family: cursive;
+    padding: 3rem;
+    background-size:contain;
+}
+section h1{
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 3rem;
+    color: palevioletred;
+}
+button{
+    background-color: pink;
+    width: 100%;
+    font-size: 3rem;
+    border-radius: 1rem;
+    margin-block: 2rem;
+    transition: all ease-in-out 1s;
+}
+
+button:hover{
+    background-color: rgb(216, 36, 141);
+
+}
+
+form > div{
+    display: flex;
+    flex-direction: column;
+}
+
+form > div>input{
+    height: 2rem;
+    border-radius: .3rem;
+    padding-inline: 2rem;
+}
+
+form > div>select{
+    height: 2rem;
+    border-radius: .3rem;
+    padding-inline: 2rem;
+
+}
+
+
+#notes>input{
+    height: 5rem;
+    border-radius: .5rem;}
+
+.icon{
+    
+    padding: 1rem;
+    transition: ease-in-out 1s all;
+}
+
+.icon:hover{
+    width: 40pt;
+    height: 40pt;
+    overflow: visible;
+}
+
+.icon-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 2rem auto;
+}
