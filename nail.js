@@ -21,14 +21,13 @@ window.addEventListener('scroll', () => {
   } else {
     logo.classList.remove('sticky');
     header.classList.remove('sticky-header');
-        icon.classList.remove('book-icon-sticky')
+        icon.classList.remove('book-icon-sticky');
   }
 });
 
 const menuDisplayBtnElement = document.getElementById("book-icon-btn")
 const menuDisplayElement = document.getElementById("menu")
-    
-console.log(menuDisplayElement)
+
 
 
 
@@ -38,7 +37,7 @@ const displayMenu = event => {
 
 
 }
- menuDisplayBtnElement.addEventListener("click", displayMenu)
+ menuDisplayBtnElement.addEventListener("click", displayMenu);
 
 
  const submitButtonElement = document.getElementById("submit-btn")
@@ -53,7 +52,6 @@ const submitForm = event => {
     const date=dateElement.value
     const note=noteElement.value
     const phoneArr=[phoneElement.length]
-    console.log(phoneArr)
     const phoneArr2=[phoneElement2.length]
     
     
@@ -82,4 +80,4 @@ const submitForm = event => {
 
 };
 
-submitButtonElement.addEventListener("click", submitForm)
+submitButtonElement.addEventListener("click", submitForm);
