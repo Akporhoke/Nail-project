@@ -117,7 +117,7 @@ overflow-x: hidden;
 }
 
 
-#logoSpace{
+.logoSpace{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -125,7 +125,7 @@ overflow-x: hidden;
     width: 100%;
     padding:3rem;
 }
-#logoSpace h1{
+.logoSpace h1{
     font-family:'Times New Roman', Times, serif;
     color: aliceblue;
     text-align: center;
@@ -463,10 +463,10 @@ footer h1{
 }
 
 
-.menuOn
+
 .icon{
     background-color: rgba(255, 255, 255,0.5);
-    padding: 1rem;
+    padding: .3rem;
     margin: 1rem;
     border-radius: 2rem;
     box-shadow: 0.7px 2px rgb(185, 92, 92);
@@ -485,6 +485,7 @@ footer h1{
 .book-icon{
     display: none;
     margin-top: 2rem;
+    padding-left:0%;
 }
 i{
     display: none;
@@ -500,7 +501,7 @@ i{
     }
     i{
         display: none;
-        color: blue;
+        color: var(--clr-primary);
     }
     i:hover{
         color: brown;
@@ -508,4 +509,13 @@ i{
     .book-icon{
         display: block;
     }
+}
+
+
+#appointment{
+    background-color:var(--clr-primary);
+    border-radius:1rem;
+    padding-block: 1rem;
+    color: #000;
+    font-family:electrolize;
 }

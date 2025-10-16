@@ -7,20 +7,22 @@ const dateElement=document.getElementById("date")
 const noteElement=document.getElementById("notes")
 
 
-const menuDisplayBtnElement = document.getElementById("book-icon-btn")
-const menuDisplayElement = document.getElementById("menu")
-    
-console.log(menuDisplayElement)
+let logo = document.querySelector('.logo');
+let header = document.querySelector('.logoSpace');
+let icon = document.querySelector('.book-icon');
 
 
-
-const displayMenu = event => {
-    event.preventDefault()
-        menuDisplayElement.classList.toggle("menuOn");
-
-
-}
- menuDisplayBtnElement.addEventListener("click", displayMenu)
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) { // threshold
+    logo.classList.add('sticky');
+    header.classList.add('sticky-header');
+    icon.classList.add('book-icon-sticky')
+  } else {
+    logo.classList.remove('sticky');
+    header.classList.remove('sticky-header');
+        icon.classList.remove('book-icon-sticky')
+  }
+});
 
 
  const submitButtonElement = document.getElementById("submit-btn")
