@@ -21,13 +21,14 @@ a{
 }
 
 #menu{
-    width: 50%;
+    width: 55%;
     height: 100vh;
     position: fixed;
     overflow: visible;
-    background-color: rgba(175, 150, 150,.5);
+    background-color: rgba(175, 150, 150,.9);
     color: grey;
     z-index: 10;
+    border: 2px steelblue solid;
 }
 
 #menu ul{
@@ -54,6 +55,39 @@ a{
     width: 100vh;
 }
 
+.logo.sticky {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  width:5rem ;
+  margin-inline: 1rem;
+  text-align:center;
+  overflow: hidden;
+}
+
+.sticky-header {
+ position:fixed;
+ background-color:white;
+ opacity: .8;
+  height: 50px;
+  justify-content: flex-start;
+  width: 5rem;
+  z-index:9;
+  align-content: space-between;
+  justify-content: space-between;
+  padding:rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+.book-icon-sticky{
+    position:fixed;
+    bottom: 87%;
+    left:70%;
+    overflow:hidden;
+}
 
 body{
 display: flex;
