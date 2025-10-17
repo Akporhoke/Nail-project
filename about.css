@@ -132,6 +132,10 @@ img{
 
 .about-content{
         margin: 2rem;
+        padding: 2%;
+        width: 95%;
+        align-self: center;
+        justify-self: center;
 }
 
 h6{
@@ -157,24 +161,34 @@ h6{
 }
 
 .greenhouse{
-        margin: 2rem;
+        margin: 5px;
         display:flex;
         flex-wrap: wrap;
         object-fit:cover;
         align-content:center;
         justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background-color: brown;
+
 }
 
 
 .green{
         width:10rem;
         height:10rem;
+        position:absolute;
+        left: 40%;
+        bottom: 20%;
+        transform:rotate(-30deg);
+
 }
 .green2{
-        position:relative;
+        position:absolute;
         transform:rotate(30deg);
         width: 10rem;
         height:13rem;
+        left: 60%;
 
        
 }
@@ -235,7 +249,7 @@ border-radius:1rem;
 
 .booking-policies{
         color:grey;
-        margin: 2rem;
+        margin: 5px;
         text-align: center;
         box-shadow: .2px .2px 1px grey;
 }
@@ -255,9 +269,20 @@ border-radius:1rem;
         
 }
 
+.policies-container{
+        display:flex;
+        flex-wrap: wrap;
+        gap:0.5rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+}
+
 .policy-flex{
         display:flex;
-        
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
 }
 
 
@@ -277,8 +302,9 @@ i{
         display: flex;
         overflow: hidden;
         padding: 10px;
-        align-content: center;
-        justify-content: center;
+        align-content: space-around;
+        justify-content: space-around;
+        position: relative;
 }
 
 .tag-me-section span{
@@ -304,16 +330,16 @@ i{
 
 .selfie{
         
-        width:25%;
+        width:5rem;
         height:8rem;
         border-radius:1rem;
         border: 2px darkslategrey solid;
         background: url(selfie1.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        position:relative;
+        position:absolute;
         top: 1rem;
-        left:2rem;
+        right:5%;
         transform: rotate(15deg);
 }
 .selfie2{
@@ -324,11 +350,8 @@ i{
         border: 2px darkslategrey solid;
         background: url(selfie2.jpg);
         background-size: cover;
-        position:relative;
-        top: 4rem;
-        left:1rem;
+        position:absolute;
+        top:5rem;
+        right:3%;
         transform: rotate(10deg);
-}
-@media (max-width: 700px){
-        
 }
