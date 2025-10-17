@@ -1,3 +1,9 @@
+:root{
+
+    --clr-primary:rgba(200, 166, 177,0.3);
+    --clr-icons:rgb(250, 112, 156);
+}
+
 *{
         margin: 0;
         padding:0;
@@ -133,9 +139,7 @@ h6{
         font-size: 1rem;
 }
 
-h1{
-       color: rgba(255,69,0,1);
-}
+
 
 .explore-btn{
         background-color: rgba(255,69,0,1);
@@ -226,4 +230,105 @@ justify-self: center;
 .hover-display>img:hover{
 width:80%;
 border-radius:1rem; 
+}
+
+
+.booking-policies{
+        color:grey;
+        margin: 2rem;
+        text-align: center;
+        box-shadow: .2px .2px 1px grey;
+}
+
+.booking-policies>h1{
+        display:inline-block;
+        background-color:black;
+        width:100%;
+        margin-block: 1rem;
+        box-shadow: .2px 4px 4px grey;
+}
+
+.booking-policies div{
+        background-color:rgba(200, 166, 177,0);
+        text-align:center;
+
+        
+}
+
+.policy-flex{
+        display:flex;
+        
+}
+
+
+
+i{
+        font-size:3rem;
+}
+
+
+.tag-me-section{
+        width:95%;
+        height: 10rem;
+        background-color: black;
+        align-self: center;
+        justify-self: center;
+        color: white;
+        display: flex;
+        overflow: hidden;
+        padding: 10px;
+        align-content: center;
+        justify-content: center;
+}
+
+.tag-me-section span{
+        color:white;
+        font-size: 2rem;
+        font: bold;
+}
+
+
+.middle-line{
+        display:inline-block;
+        margin-left:2rem;
+        background-color:grey;
+        padding: 0;
+        transform: rotate(5deg);
+        
+        
+}
+
+.bottom-line{
+        font-size:3rem;
+}
+
+.selfie{
+        
+        width:25%;
+        height:8rem;
+        border-radius:1rem;
+        border: 2px darkslategrey solid;
+        background: url(selfie1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position:relative;
+        top: 1rem;
+        left:2rem;
+        transform: rotate(15deg);
+}
+.selfie2{
+        
+        width:5rem;
+        height:8rem;
+        border-radius:1rem;
+        border: 2px darkslategrey solid;
+        background: url(selfie2.jpg);
+        background-size: cover;
+        position:relative;
+        top: 4rem;
+        left:1rem;
+        transform: rotate(10deg);
+}
+@media (max-width: 700px){
+        
 }
