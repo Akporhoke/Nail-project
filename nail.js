@@ -26,7 +26,7 @@ const menuDisplayElement = document.getElementById("menu")
 const displayMenu = event => {
     event.preventDefault()
         menuDisplayElement.classList.toggle("menuOn");
-
+     
 
 }
  menuDisplayBtnElement.addEventListener("click", displayMenu);
