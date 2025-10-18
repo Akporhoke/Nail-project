@@ -76,10 +76,10 @@ span:hover{
 }
 
 
-.appointment{
+.homepage{
     border-radius: 0.5rem;
     text-align: center;
-    padding: .5rem;
+    padding: 2rem;
     font-size: 1rem;
     transition: all ease-in-out 1s;
     color:rgb(200, 166, 177);
@@ -87,7 +87,7 @@ span:hover{
 ;
 }
 
-.appointment:hover{
+.homepage:hover{
     background: 
        rgb(200, 166, 177);
     color:rgb(163, 55, 163);
@@ -145,7 +145,7 @@ h6{
 
 
 
-.explore-btn{
+#explore-btn{
         background-color: rgba(255,69,0,1);
         width:7rem;
         height:5rem;
@@ -153,6 +153,34 @@ h6{
        align-content:center;
        justify-content: center;
        border-radius: 1rem;
+}
+
+.explore-display{
+ display: flex;
+ color:blue;
+ 
+}
+
+.explorer{
+ display: none;
+ background-color:white;
+ border-top-right-radius:1rem;
+ border-bottom-right-radius:1rem;
+ width: 70%;
+ justify-self: center;
+ align-self:center;
+ justify-content: space-between;
+ align-content:space-between;
+}
+
+.explorer i{
+ font-size:2.5rem;
+ margin-inline:5px;
+ 
+}
+
+.explorer-on{
+ display: inline;
 }
 
 .second-container{
