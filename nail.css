@@ -50,7 +50,7 @@ a{
 
 .menuOn{
     display: block;
-    position: relative;
+    position: absolute;
     background-color: green;
     width: 100vh;
 }
