@@ -8,6 +8,7 @@
         margin: 0;
         padding:0;
         box-sizing: border-box;
+        
 }
 
 a{
@@ -19,6 +20,7 @@ body{
         background-color:rgba(200, 166, 177,0.3);;
         background-repeat: no-repeat;
         background-size: cover;
+        
        
 }
 
@@ -328,7 +330,7 @@ i{
         justify-self: center;
         color: white;
         display: flex;
-        overflow: hidden;
+        overflow-x: hidden;
         padding: 10px;
         align-content: space-around;
         justify-content: space-around;
@@ -383,3 +385,88 @@ i{
         right:3%;
         transform: rotate(10deg);
 }
+
+.contact-container{
+ background-color:whitesmoke;
+ margin-block:1rem;
+ padding-block: 1rem;
+ color:darkblue;
+}
+
+.contact-container h1{
+    background-color:red;
+    margin:1rem;
+    width: 15rem;
+    border-radius:2rem;
+    text-align:center;
+    align-self: center;
+    justify-self: center;
+}
+
+.icon-visuals span{
+ display: inline-block;
+ color:darkblue;
+ font-size:10px;
+ padding:5px;
+ display:flex;
+
+}
+
+.icon-visuals span i{
+ font-size:19px;
+ background-color:orange;
+ border-radius: 50%;
+ align-self:center ;
+ justify-self: center;
+ padding: 5px;
+}
+
+
+.icon-flex{
+ display:flex;
+ flex-direction:column;
+ margin: 9px;
+}
+
+.icon-flex h4{
+ text-align: justify;
+ 
+}
+
+.contact-us-flex{
+ display :flex;
+ gap:1rem;
+ overflow-x: hidden;
+}
+form{
+ padding:1rem;
+ border-radius: 1rem;
+}
+#information{
+ height:4rem;
+
+}
+.message{
+box-shadow: 1px 2px 2px 2px grey;
+padding:1rem;
+border-radius: 2rem;
+}
+
+.submit-message-btn{
+ background-color: purple;
+ font-size: 2rem;
+ text-align: center;
+ align-self: center;
+ justify-self: center;
+ width: 10rem;
+ border-radius: 2rem;
+ transition: all 1s ease-in;
+
+}
+
+.submit-message-btn:hover{
+ background-color:red;
+}
+ 
+
+
