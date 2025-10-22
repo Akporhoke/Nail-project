@@ -20,6 +20,7 @@ a{
     justify-content:center;
 }
 
+
 #menu{
     width: 55%;
     height: 100vh;
@@ -53,6 +54,23 @@ a{
     position: absolute;
     background-color: green;
     width: 100vh;
+}
+
+.overlay-close{
+    position: fixed;
+top: 0;
+left: 0;
+width: 45%;
+height: 100%;
+background: rgba(0, 0, 0, 0);
+z-index: 1000;
+display: none;
+justify-self:flex-end;
+margin-left: 50%;
+margin-right:0;
+}
+.active {
+    display: block;
 }
 
 .logo.sticky {
@@ -90,7 +108,7 @@ a{
 }
 
 body{
-display: flex;
+display:flex;
 padding: 0rem;
 padding: 0rem;
 width: 100%;
