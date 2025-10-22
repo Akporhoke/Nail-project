@@ -335,6 +335,7 @@ i{
         align-content: space-around;
         justify-content: space-around;
         position: relative;
+        overflow: hidden;
 }
 
 .tag-me-section span{
