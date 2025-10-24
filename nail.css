@@ -28,7 +28,7 @@ a{
     overflow: visible;
     background-color: rgba(175, 150, 150,.9);
     color: grey;
-    z-index: 10;
+    z-index: 10000;
     border: 2px steelblue solid;
 }
 

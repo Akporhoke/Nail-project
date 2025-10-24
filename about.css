@@ -392,6 +392,8 @@ i{
  margin-block:1rem;
  padding-block: 1rem;
  color:darkblue;
+ align-cntent: space-around;
+ justify-content: space-around;
 }
 
 .contact-container h1{
@@ -438,6 +440,8 @@ i{
  display :flex;
  gap:1rem;
  overflow-x: hidden;
+ align-content:space-around;
+ justify-content: space-around;
 }
 form{
  padding:1rem;

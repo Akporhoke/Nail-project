@@ -6,7 +6,7 @@ let icon = document.querySelector('.book-icon');
 const overlay = document.getElementById("overlay");
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) { // threshold
+  if (window.scrollY > 1000) { // threshold
     logo.classList.add('sticky');
     header.classList.add('sticky-header');
     icon.classList.add('book-icon-sticky')
