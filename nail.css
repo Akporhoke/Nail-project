@@ -11,7 +11,7 @@
     padding:0rem;
     box-sizing: border-box;
     overflow-x: hidden;
-
+    background:    --clr-primary;
 
 }
 a{
@@ -29,7 +29,11 @@ a{
     background-color: rgba(175, 150, 150,.9);
     color: grey;
     z-index: 10000;
-    border: 2px steelblue solid;
+    background-color:rgba(225, 225, 225, 0.15);
+border:rgba(225, 225, 225, 0.5) solid 1px;
+border-radius: 1rem;
+backdrop-filter: blur(10px);
+box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 #menu ul{
@@ -61,13 +65,13 @@ a{
 top: 0;
 left: 0;
 right:0;
-width: 45%;
+width: 100vh;
 height: 100%;
 background: rgba(0, 0, 0, 0.2);
-z-index: 1000;
+z-index: -1;
 display: none;
 justify-self:flex-end;
-margin-left: 45%;
+margin-left: 0%;
 margin-right:0;
 
 }
@@ -87,26 +91,36 @@ margin-right:0;
 }
 
 .sticky-header {
+    margin-top: 1rem;
  position:fixed;
- background-color:white;
- opacity: .8;
-  height: 50px;
- 
+ opacity: 1;
   width: 5rem;
   z-index:9;
   align-content: space-between;
   justify-content: space-between;
-  padding:rem;
-  overflow: hidden;
+  overflow: visible;
   text-align: center;
+  background-color:rgba(225, 225, 225, 0.15);
+border:rgba(225, 225, 225, 0.5) solid 1px;
+border-radius: 1rem;
+backdrop-filter: blur(10px);
+box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 
 .book-icon-sticky{
     position:fixed;
-    bottom: 87%;
+    bottom: 0rem;
     left:70%;
-    overflow:hidden;
+    bottom: 25%;
+    overflow:visible;
+    font-size:.2rem;
+    background:rgba(157, 31, 21, 0.8);
+    align-self: center;
+    justify-self: center;
+    padding:3px;
+    border-radius:2rem;
+    
 }
 
 body{
@@ -157,7 +171,7 @@ overflow-x: hidden;
 }
 
 span{
-    color:var(--clr-primary);
+    
     text-align: center;
     transition: all ease-in-out 1s;
     padding: 2.5%;
@@ -471,6 +485,7 @@ footer h1{
 }
 
 .book-pedicure{
+    display: block;
     margin:2rem;
     height:5rem;
     background-color:red;
@@ -478,6 +493,7 @@ footer h1{
     align-content: center;
     justify-content: center;
     border-radius: 2rem;
+    background:purple;
 }
 #whatsapp{
     border-radius: 50%;
@@ -486,11 +502,10 @@ footer h1{
 
 
 .icon{
-    background-color: rgba(255, 255, 255,0.5);
+    color:red;
     padding: .3rem;
     margin: 1rem;
     border-radius: 2rem;
-    box-shadow: 0.7px 2px rgb(185, 92, 92);
     cursor: pointer;
 }
 
@@ -507,11 +522,13 @@ footer h1{
     display: none;
     margin-top: 2rem;
     padding-left:0%;
+    text-align:center;
 }
 i{
     display: none;
-    color: red;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    align-self: center;
+    justify-self: center;
     
 }
 
@@ -521,7 +538,7 @@ i{
     }
     i{
         display: none;
-        color: var(--clr-primary);
+        color: #F0EDE5E5;
     }
     i:active{
         color: blueviolet;

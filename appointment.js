@@ -7,6 +7,24 @@ const dateElement=document.getElementById("date")
 const noteElement=document.getElementById("notes")
 
 
+const select = document.getElementById("services");
+
+// Load saved selection
+const savedItem = localStorage.getItem("selectedItem");
+if (savedItem) {
+  const option = document.getElementById(savedItem);
+  if (option) select.value = option.value; // select the saved option
+}
+
+// Save selection when user changes it
+select.addEventListener("change", () => {
+  const selectedOption = select.options[select.selectedIndex];
+  localStorage.setItem("selectedItem", selectedOption.id);
+});
+
+
+
+
 const submitButtonElement = document.getElementById("submit-btn")
 
 const submitForm = event => {
@@ -48,3 +66,5 @@ const submitForm = event => {
 };
 
 submitButtonElement.addEventListener("click", submitForm);
+
+

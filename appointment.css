@@ -1,8 +1,9 @@
 *{
+    margin: 0rem;
     padding: 0rem;
-    border: 0rem;
     box-sizing: border-box;
     overflow-x: hidden;
+    border: 0;
  
 }
 
@@ -79,13 +80,22 @@ a{
 }
 .otherpages{
     flex-wrap: wrap;
+    
 }
 
 span{
+    display:inline-block;
     color:rgb(200, 166, 177);
     text-align: center;
     transition: all ease-in-out 1s;
     padding: 2.5%;
+    margin:.5rem;
+    border-radius: 1rem;
+    background-color:rgba(225, 225, 225, 0.15);
+    border:rgba(225, 225, 225, 0.5) solid 1px;
+    border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 span:hover{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -105,18 +115,25 @@ span:hover{
     padding:3rem;
 }
 
-.appointment{
+#appointment{
+    display: block;
     border-radius: 0.5rem;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-items: center;
+    align-content:center;
+    justify-content:center;
     text-align: center;
-    padding: .5rem;
     font-size: 1rem;
     transition: all ease-in-out 1s;
     color:rgb(200, 166, 177);
-    background-color: rgb(163, 55, 163);
-;
+    margin-top: 25%;
+    margin-right:3rem;
+    
 }
 
-.appointment:hover{
+#appointment:hover{
     background: 
        rgb(200, 166, 177);
     color:rgb(163, 55, 163);
@@ -237,4 +254,40 @@ form > div>select{
 
 i{
         font-size:3rem;
+}
+
+#appointment-home-btn{
+    display: flex;
+    border-radius: 1rem;
+    background-color:rgba(225, 225,225,0.15);
+ border:rgba(225, 225,225,0.5) solid 1px;
+ border-radius: 1rem;
+ backdrop-filter: blur(10px);
+ box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
+ align-content:center ;
+ justify-content:center;
+ height:5rem;
+    
+    
+}
+
+#book-icon-btn{
+    justify-items: center;
+    justify-items: center;
+    text-align: center;
+    padding:1rem;
+    transition: all ease-in-out 1s;
+    color:rgb(200, 166, 177);
+    
+    
+}
+
+
+hr{
+    border:1px solid #ccc;
+}
+
+
+.selected{
+    background-color:red;
 }

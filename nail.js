@@ -5,8 +5,29 @@ let header = document.querySelector('.logoSpace');
 let icon = document.querySelector('.book-icon');
 const overlay = document.getElementById("overlay");
 
+const nextPage = document.getElementById('book-pedicure-btn')
+const manicurePage =document.getElementById('book-manicure-btn')
+
+console.log('book-pedicure-btn')
+
+const saveAndGo = () => {
+  localStorage.setItem('selectedItem', "product-2");
+  window.location.href = "nail-appointment.html";
+}
+const saveAndGo1 = () => {
+  localStorage.setItem('selectedItem', "product-1");
+  window.location.href = "nail-appointment.html";
+}
+
+
+
+
+nextPage.addEventListener('click', saveAndGo);
+manicurePage.addEventListener('click', saveAndGo1);
+
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 1000) { // threshold
+  if (window.scrollY >=  1000) { // threshold
     logo.classList.add('sticky');
     header.classList.add('sticky-header');
     icon.classList.add('book-icon-sticky')
@@ -43,3 +64,6 @@ const displayMenu = event => {
   overlay.addEventListener("click", closeMenu);
   main.addEventListener("click", closeMenu);
   
+
+
+

@@ -3,14 +3,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 .container{
-    background-color: rgb(253, 242, 248);
+    position:relative;
+    z-index:-2;
+    background-color:rgba(239, 251, 176, .3);
+    z-index: 2;
+   
+    }
+    
+#service-page{
+   color: #004643;
+ background: #F0EDE5;
 }
 
 header{
-    background-color: rgb(252,231,243);
+    background-color: rgba(239, 251, 176, .3);
     color: grey;
     text-align: center;
     padding:1rem;
@@ -23,20 +33,32 @@ header>h1{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
+
 .flex-container h2{
-    color: rgb(190, 24, 93);
+    display:block;
+    background: #FBF7BA;
+    color: #A0430A;
+    margin:1rem;
+    padding:.2rem;
+    border-radius:1rem;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .flex-container>div{
-    background-color: white;
+    background-color: #9D1F15;
+    color:rgba(251, 247, 186, 0.8)
+;
     padding: 2rem;
     align-self:center ;
     justify-self: center;
     padding: 2rem;
     margin:2rem;
     border-radius: 1rem;
+    opacity:1;
+    border:rgba(225, 225,225,0.5) solid 1px;
+     box-shadow:0px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
 .flex-container{
@@ -48,7 +70,9 @@ header>h1{
 }
 
 .extras{
-    background-color: white;
+    background-color: #9D1F15;
+    color:rgba(251, 247, 186, 0.8)
+;
     width: 90%;
     align-self:center ;
     justify-self: center;
@@ -73,12 +97,11 @@ footer>h1{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #appointment1{
-    padding: 2rem;
+    padding: 0rem;
     }
     
     
-    .icon{
-    
+.icon{
     padding: 1rem;
     transition: ease-in-out 1s all;
 }
@@ -94,4 +117,143 @@ footer>h1{
     align-content: center;
     justify-content: center;
     gap: 2rem auto;
+}
+
+#presson-container{
+    background: #9D1F15;
+    color:rgba(251, 247, 186, 1.0);
+    text-align:center;
+    padding-block:0rem;
+    transition: all ease-in-out .5s;
+    overflow: visible;
+    width:90%;
+     position:relative;
+}
+
+#presson-container:hover{
+    width:96%;
+    padding: .5rem;
+    margin:2%;
+}
+
+#presson-container h1{
+    display:block;
+    margin:1rem;
+    background: #A0430A;
+    border-radius: 1rem;
+    box-shadow: 1px .5px .5px .3px;
+   
+}
+#press-on{
+    display: flex;
+    padding:0rem;
+    gap: 1rem;
+    width:100%;
+    height: 80%;
+    
+}
+
+
+.img-container{
+    width:30rem;
+    padding:0rem;
+    align-content: center;
+    justify-content: center;
+    overflow:visible;
+    padding:1rem ;
+}
+
+#press-on>div>img{
+    width: 10rem;
+    height:10rem;
+    object-fit:cover;
+    border-radius:1rem;
+}
+
+#line2{
+    display: flex;
+    padding:0rem;
+    gap: 1rem;
+    width:100%;
+    height: 80%;
+    
+}
+
+#line2>div>img{
+    width: 10rem;
+    height:10rem;
+    object-fit:cover;
+    border-radius:1rem;
+}
+.checkout-btn{
+    display: block;
+    background: #FBF7BA;
+    color: #9D1F15;
+    margin: 1rem;
+    border-radius:1rem;
+    font-family: cursive;
+}
+
+
+
+.double-line-cart{
+    overflow-x :scroll;
+}
+
+#presson-container::after{
+    content:"";
+    display: block;
+    width: 80%;
+    height: 150%;
+    background: url(presson2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+  top: 30%;
+  margin: 50% auto;
+  left:0;
+  right:0;
+  z-index: -1;
+ 
+}
+
+#shopping-cart{
+    display:block;
+    font-size: 6rem;
+    align-self: center;
+    justify-self: center;
+}
+
+
+#appointment-home-btn{
+    display: flex;
+    
+    border-radius:1rem;
+    background-color:rgba(225, 225,225,0.15);
+ border:rgba(225, 225,225,0.5) solid 1px;
+ border-radius: 1rem;
+ backdrop-filter: blur(10px);
+ box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
+    
+    
+    
+}
+
+#book-icon-btn{
+    
+    justify-items: center;
+    justify-items: center;
+    text-align: center;
+    padding:1rem;
+    font-size:3rem;
+    transition: all ease-in-out 1s;
+    color:rgb(200, 166, 177);
+    border-radius: 0rem;
+    
+}
+
+@media (max-width: 700px){
+    #presson-container::after{
+        display:none;
+    }
 }

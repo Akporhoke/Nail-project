@@ -12,11 +12,20 @@
                 <img src="mainlogo.jpg" alt="" class="logo">        
                 <div class="otherpages">
                  <a href="services.html"><span>Services</span></a>
-                 <span>About Studio</span>
+                 <a href="about.html"> 
+                 <span id="about-page">About Studio</span>
+                 </a>
                  <span>Price</span>
                  <span>Reviews</span>
                  <span>FAQs</span>
-                 <a href="index.html"><div class="appointment" ><h5>RETURN HOME</h5></div></a>
+                 <section id=appointment-home-btn>
+
+
+                 <a href="index.html"><div id="appointment" ><h5>RETURN HOME</h5></div></a>
+                    <hr/>
+                                               <a href="nail-appointment.html"><i class="fa-solid fa-book" id="book-icon-btn"></i></a>
+
+                 </section>
                 </div>
              </div>
         <div class="circle"></div>
@@ -42,12 +51,13 @@
                 </div>                
                 <div >
                     <label for="">Choose Service</label>
-                    <select id="services">
-                        <option disabled selected hidden>-Select a Service-</option>
-                        <option>Manicure</option>
-                        <option value="Pedicure">Pedicure</option>
-                        <option>Gel Nails</option>
-                        <option>Acrylic Nails</option>
+                    <select id="services" >
+                        <option disabled selected >-Select a Service-</option>
+                        <option id="product-1">Manicure</option>
+                        <option value="Pedicure" id="product-2">Pedicure</option>
+                        <option value="Press-on">Press-on</option>
+                        <option id="product-4">Gel Nails</option>
+                        <option id="product-5">Acrylic Nails</option>
                         <option>Custom Nail Art</option>
                     </select>
                 </div>

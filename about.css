@@ -17,7 +17,7 @@ a{
 
 body{
   
-        background-color:rgba(200, 166, 177,0.3);;
+        background-color:rgba(251, 247, 186, .4);
         background-repeat: no-repeat;
         background-size: cover;
         
@@ -53,19 +53,33 @@ body{
     flex-wrap: wrap;
 }
 
-span{
-    color:rgb(200, 166, 177);
-    text-align: center;
-    transition: all ease-in-out 1s;
-    padding: 2.5%;
+.otherpages span{
+    display:inline-block;
+color:rgb(200, 166, 177);
+text-align: center;
+transition: all ease-in-out 1s;
+padding: 2.5%;
+margin:.5rem;
+border-radius: 1rem;
+background-color:rgba(225, 225, 225, 0.15);
+border:rgba(225, 225, 225, 0.5) solid 1px;
+border-radius: 1rem;
+backdrop-filter: blur(10px);
+box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
 }
-span:hover{
+
+.otherpages span:hover{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
 }     
 .logo{
     width: 10rem;
     border-radius: 50%;
+}
+
+#about-page{
+ color: #004643;
+ background: #F0EDE5E5;
 }
 
 #logoSpace{
@@ -85,8 +99,7 @@ span:hover{
     font-size: 1rem;
     transition: all ease-in-out 1s;
     color:rgb(200, 166, 177);
-    background-color: rgb(163, 55, 163);
-;
+    width:14rem;
 }
 
 .homepage:hover{
@@ -322,7 +335,7 @@ i{
 }
 
 
-.tag-me-section{
+#tag-me-section{
         width:95%;
         height: 10rem;
         background-color: black;
@@ -331,33 +344,40 @@ i{
         color: white;
         display: flex;
         overflow-x: hidden;
-        padding: 10px;
+        padding: px;
         align-content: space-around;
         justify-content: space-around;
         position: relative;
         overflow: hidden;
 }
 
-.tag-me-section span{
+#tag-me-section span{
         color:white;
         font-size: 2rem;
         font: bold;
+        border-radius: 0;
+        padding:0;
 }
 
+#tag-me-section>span:hover{
+ 
+color:greenyellow; 
+}
 
-.middle-line{
+#middle-line{
         display:inline-block;
         margin-left:2rem;
         background-color:grey;
         padding: 0;
         transform: rotate(5deg);
-        
-        
+        margin:0;
+        width: 10rem;
 }
 
-.bottom-line{
-        font-size:3rem;
+#bottom-line{
+        font-size:2rem;
 }
+
 
 .selfie{
         
@@ -388,7 +408,7 @@ i{
 }
 
 .contact-container{
- background-color:whitesmoke;
+ background-color:rgba(160, 67, 10, .4);
  margin-block:1rem;
  padding-block: 1rem;
  color:darkblue;
@@ -408,7 +428,7 @@ i{
 
 .icon-visuals span{
  display: inline-block;
- color:darkblue;
+ color:#F0EDE5;
  font-size:10px;
  padding:5px;
  display:flex;
@@ -458,7 +478,7 @@ border-radius: 2rem;
 }
 
 .submit-message-btn{
- background-color: purple;
+ background-color: red;
  font-size: 2rem;
  text-align: center;
  align-self: center;
@@ -473,5 +493,33 @@ border-radius: 2rem;
  background-color:red;
 }
  
+#appointment-home-btn{
+ background-color:rgba(225, 225,225,0.15);
+ border:rgba(225, 225,225,0.5) solid 1px;
+ border-radius: 1rem;
+ backdrop-filter: blur(10px);
+ box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+#appointment-span{
+ display:block;
+ padding:.5rem;
+ background: #A0430A;
+ border-radius:1rem;
+ background-color: rgba(255,69,0,1);
+ align-self: center;
+ justify-self: center;
+ justify-content: center;
+ color: #000;
+ font-size:2rem;
+ transform: rotate(-5deg);
+ 
+   
+
+}
+
+
+
+
 
 

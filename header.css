@@ -1,0 +1,95 @@
+a{
+    text-decoration:none;
+}
+
+#logoSpace{
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-self: center;
+    gap:10%;
+    width: 90%;
+    padding:3rem;
+    padding-top: 1rem;
+    background: 
+    linear-gradient(rgba(0, 64, 32, 0.7),rgba(0, 64, 32, 0.7)),
+    url("backnail.jpeg");
+    background-size:contain;
+    margin:2rem;
+    margin-bottom: 0%;
+    border-radius: 1rem;
+    
+}
+#logoSpace h1{
+    font-family:'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+}
+.otherpages{
+    flex-wrap: wrap;
+}
+
+span{
+    display:inline-block;
+    color:rgb(200, 166, 177);
+    text-align: center;
+    transition: all ease-in-out 1s;
+    padding: 2.5%;
+    background: #004643;
+    margin:.5rem;
+    border-radius: 1rem;
+    background-color:rgba(225, 225,225,0.15);
+ border:rgba(225, 225,225,0.5) solid 1px;
+ border-radius: 1rem;
+ backdrop-filter: blur(10px);
+ box-shadow:0px 6px 6px rgba(0, 0, 0, 0.5);
+    
+}
+span:hover{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}     
+.logo{
+    width: 10rem;
+    border-radius: 50%;
+}
+
+#logoSpace{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:10%;
+    width: 100%;
+    padding:3rem;
+}
+#appointment{
+    border-radius: 0rem;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    transition: all ease-in-out 1s;
+    color:rgb(200, 166, 177);
+    width: 14rem;
+    
+}
+
+#appointment:hover{
+    background: 
+       rgb(200, 166, 177);
+    color:rgb(163, 55, 163);
+;
+    }
+    
+#appointment-home-btn {
+    display: flex;
+}
+
+#book-icon-btn {
+    justify-items: center;
+    justify-items: center;
+    text-align: center;
+    transition: all ease-in-out 1s;
+    color: rgb(200, 166, 177);
+    border-radius: 0rem;
+    padding:1rem;
+}
