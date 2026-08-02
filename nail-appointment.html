@@ -34,42 +34,63 @@
             <h1>Book Your Appointment</h1>
             <form>
                 <div>
-                    <label>Full Name</label>
+                    <label>Full Name<span class="tagline"><p >*required</p></span>
+               </label>
+
+               
                     <input type="text" id="name" required>
                 </div>
                 <div>
-                    <label for="Email">Email</label>
+                    <label for="Email">Email<span class="tagline"><p >*required</p></span>
+               </label>
+
+               
                     <input type="email" id="email" required>
                 </div>
                 <div>
-                    <label>Phone 1</label>
-                    <input type="number" id="phoneNumber">
+                    <label>Phone 1<span class="tagline"><p >*required</p></span>
+               </label>
+                   
+               
+                    <input type="number" id="phoneNumber" requ>
                 </div>
                 <div>
                     <label>Phone 2</label>
                     <input type="number" id="phoneNumber2">
                 </div>                
-                <div >
-                    <label for="">Choose Service</label>
-                    <select id="services" >
-                        <option disabled selected >-Select a Service-</option>
-                        <option id="product-1">Manicure</option>
-                        <option value="Pedicure" id="product-2">Pedicure</option>
-                        <option value="Press-on">Press-on</option>
-                        <option id="product-4">Gel Nails</option>
-                        <option id="product-5">Acrylic Nails</option>
-                        <option>Custom Nail Art</option>
-                    </select>
+                <div>
+                   <label>Choose Services <span style="color: red;">*required</span></label>
+                   <div id="services-container">
+                       <div class="service-section">
+                           <label class="service-num-label">Service 1</label>
+                           <select class="service-select" name="service">
+                               <option value="">-Select Service-</option>
+                               <option value="Manicure">Manicure</option>
+                               <option value="Pedicure">Pedicure</option>
+                               <option value="Nail Extensions">Nail Extensions</option>
+                               <option value="Press-on Nails">Press-on Nails</option>
+                               <option value="Custom Nail Art">Custom Nail Art</option>
+                           </select>
+                       </div>
+                   </div>
+                   <button type="button" id="add-service-btn">+ Add Another Service</button>
                 </div>
                 <div>
-                    <label for="">Preferred Date</label>
+                    <label for="">Preferred Date<span class="tagline"><p >*required</p></span>
+               </label>
                     <input type="date" id="date" required>
                 </div>
-                
-                <div id="notes">
+                <label for="time">Preferred Time<span class="tagline"><p >*required</p></span>
+               </label> 
+                <input type="time" id="time" name="time" value="12:00" required>
+                <div id="notes-wrapper">
                     <label>Notes/Requests</label>
-                    <input type="text" id="notes" placeholder="E.g. French tips, specific colors..." required>
+                    <input type="text" id="notes" placeholder="E.g. French tips, specific colors..." required >
                 </div>
+                <label class="policy-label">
+    <input type="checkbox" id="policyCheckbox" required>
+    I agree to the <span id="policy-clicker">booking policies</span>
+</label>
                 <button type="submit" id="submit-btn">Submit Booking</button>
                 
             </form>
@@ -81,73 +102,13 @@
 
 
     </div>
-          <section class="booking-policies">
-              
-              <h1>Booking Policies</h1>
-              <div class="policies-container">
-                        <div class="policy-flex">
-                                <div>
-                                        <i class="fa-regular fa-calendar-check"></i>
-                                                <h2>Appointment</h2><br />
-                                                <p>
-                                                        PLEASE BOOK AT LEAST 5 DAYS IN
-                                                        ADVANCE TO AVOID RUSH!!
-                                                        RESCHEDULE 24 HOURS BEFORE
-                                                        YOUR APPOINTMENT. IF YOURE
-                                                        FEELING SICK PLEASE LET ME KNOW
-                                                        SO WE CAN RESCHEDULE.
-                                                </p>
-                                </div><br>
-                                
-                                <div>
-                                        <i class="fa-solid fa-dollar-sign"></i>
-
-
-                                <h2>Deposit</h2>
-                                <br />
-                                <p>
-                                                THE DEPOSIT IS $10 (NON-
-                                                REFUNDABLE) AND WILL BE CHARGED
-                                                WHEN YOU BOOK TO SECURE YOUR
-                                                APPOINTMENT, AND YOU PAY THE
-                                                REMAINING AMOUNT ON THE DAY OF
-                                                YOUR APPOINTMENT.
-                                        </p>
-                                </div>
-                                <br>
-                        
-                        </div><hr>
-                        
-                        <div class="policy-flex">
-                                <div><i class="far fa-clock"></i>
-
-                                        <h1>LATE ARRIVAL</h1>  
-                                        <p>PLEASE ARRIVE ON TIME. IF YOU'RE
-                                                15 MINUTES LATE, YOUR
-                                                APPOINTMENT WILL BE CANCELLED.
-                                                YOU DO HAVE THE OPTION TO
-                                                RESCHEDULE.</p>
-                                </div>
-<                                
-                                
-                                <div>
-                                        <i class="far fa-times-circle"></i>
-
-                                        <h1>NO GUESTS</h1>
-                                        <p>SINCE I AM HOME BASED I DO HAVE
-                                                LIMITED SPACE SO NO GUEST ARE
-                                                ALLOWED UNLESS YOU LET ME
-                                                KNOW AND WE'VE DISCUSSED IT.</p>
-                                </div>
-                        </div>
-
-                  </div>
-      </section>
-      
     
+    
+    
+    
+
        <section class="follow"><h1>Follow Us</h1><br>
-  
-   
+
  <div class="icon-container">
          
 
@@ -180,8 +141,8 @@
            <svg xmlns="http://www.w3.org/2000/svg" width="30pt" height="30pt" viewBox="0 0 150 150" version="1.1" class="iconadda">
 <g>
 <g id="Social_Instagram_LHmowpf-0"><path style=" stroke:none;fill-rule:nonzero;fill:#000001;fill-opacity:1;" d="M 149.375 44.375 C 148.75 36.25 147.5 31.25 145.625 26.25 C 144.375 21.25 141.875 16.875 137.5 12.5 C 133.125 8.125 129.375 5.625 124.375 3.75 C 119.375 1.875 114.375 0.625 106.25 0 C 98.125 0 95.625 0 75 0 C 54.375 0 51.875 0 44.375 0.625 C 36.25 0.625 30.625 1.875 25.625 3.75 C 21.25 5.625 16.875 8.125 12.5 12.5 C 8.125 16.875 5.625 21.25 3.75 25.625 C 1.875 30.625 0.625 36.25 0.625 44.375 C 0 51.875 0 54.375 0 75 C 0 95.625 0 98.125 0.625 105.625 C 1.25 113.75 2.5 118.75 4.375 123.75 C 5.625 128.75 8.125 133.125 12.5 137.5 C 16.875 141.875 20.625 144.375 25.625 146.25 C 30.625 148.125 35.625 149.375 43.75 150 C 51.875 150 54.375 150 75 150 C 95.625 150 98.125 150 105.625 149.375 C 113.75 148.75 118.75 147.5 123.75 145.625 C 128.75 143.75 133.125 141.25 136.875 136.875 C 140.625 132.5 143.75 128.75 145.625 123.75 C 147.5 118.75 148.75 113.75 149.375 105.625 C 150 98.125 150 95.625 150 75 C 150 54.375 150 51.875 149.375 44.375 Z M 136.25 105 C 135.625 112.5 135 116.25 133.75 118.75 C 132.5 122.5 130.625 125 128.125 127.5 C 125.625 130 123.125 131.875 119.375 133.125 C 116.875 134.375 112.5 135.625 105.625 135.625 C 97.5 136.25 95.625 136.25 75.625 136.25 C 55.625 136.25 53.125 136.25 45.625 135.625 C 38.125 135 34.375 134.375 31.875 133.125 C 28.125 131.875 25.625 130 23.125 127.5 C 20.625 125 18.75 122.5 17.5 118.75 C 16.25 116.25 15 111.875 15 105 C 14.375 96.875 14.375 95 14.375 75 C 14.375 55 14.375 52.5 15 45 C 14.375 37.5 15.625 33.125 16.25 30.625 C 17.5 26.875 19.375 24.375 21.875 21.875 C 24.375 19.375 26.875 17.5 30.625 16.25 C 33.125 15.625 37.5 14.375 45 13.75 C 52.5 13.75 55 13.75 75 13.75 C 95 13.75 97.5 13.75 105 14.375 C 112.5 15 116.25 15.625 118.75 16.875 C 122.5 18.125 125 20 127.5 22.5 C 130 25 131.875 27.5 133.125 31.25 C 134.375 33.75 135.625 38.125 135.625 45 C 136.25 53.125 136.25 55 136.25 75 C 136.25 95 136.25 97.5 136.25 105 Z M 136.25 105 " />
-</g><g id="Social_Instagram_LHmowpf-1"><path style=" stroke:none;fill-rule:nonzero;fill:#000001;fill-opacity:1;" d="M 75 37.5 C 54.375 37.5 37.5 54.375 37.5 75 C 37.5 95.625 54.375 112.5 75 112.5 C 95.625 112.5 112.5 95.625 112.5 75 C 112.5 54.375 95.625 37.5 75 37.5 Z M 75 99.375 C 61.25 99.375 50.625 88.75 50.625 75 C 50.625 61.25 61.25 50.625 75 50.625 C 88.75 50.625 99.375 61.25 99.375 75 C 99.375 88.75 88.75 99.375 75 99.375 Z M 75 99.375 " />
-</g><g id="Social_Instagram_LHmowpf-2"><path style=" stroke:none;fill-rule:nonzero;fill:#000001;fill-opacity:1;" d="M 125 37.5 C 125 42.675781 120.800781 46.875 115.625 46.875 C 110.449219 46.875 106.25 42.675781 106.25 37.5 C 106.25 32.324219 110.449219 28.125 115.625 28.125 C 120.800781 28.125 125 32.324219 125 37.5 " />
+</g><g id="Social_Instagram_LHmowpf-1"><path style=" stroke:none;fill-rule:nonzero;fill:#000001;fill-opacity:1;" d="M 75 37.5 C 54.375 37.5 37.5 54.375 37.5 75 C 37.5 95.625 54.375 112.5 75 112.5 C 95.625 112.5 112.5 95.625 112.5 75 Z M 75 99.375 C 61.25 99.375 50.625 88.75 50.625 75 C 50.625 61.25 61.25 50.625 75 50.625 C 88.75 50.625 99.375 61.25 99.375 75 C 99.375 88.75 88.75 99.375 75 99.375 Z M 75 99.375 " />
+</g><g id="Social_Instagram_LHmowpf-2"><path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 125 37.5 C 125 42.675781 120.800781 46.875 115.625 46.875 C 110.449219 46.875 106.25 42.675781 106.25 37.5 C 106.25 32.324219 110.449219 28.125 115.625 28.125 C 120.800781 28.125 125 32.324219 125 37.5 " />
 </g></g>
 </svg>
    </div>
@@ -189,6 +150,67 @@
    
     </div>
    </section>
+   
+   
+          <div id="pop-up">
+            <span id="close-btn">X</span>
+           <section>
+<h1>Booking Policies</h1>
+
+<div class="policy-highlights">
+    <span class="highlight-chip">📅 Book 48 hrs ahead</span>
+    <span class="highlight-chip">💰 ₦2,000 deposit</span>
+    <span class="highlight-chip">⏰ 15 min late = cancelled</span>
+</div>
+
+<div class="policy-list">
+    <div class="policy-item">
+        <i class="fa-regular fa-calendar-check"></i>
+        <div class="policy-text">
+            <strong>Advance Booking</strong>
+            <span>Please book at least 48 hours ahead so we can prepare your space and products.</span>
+        </div>
+    </div>
+
+    <div class="policy-item">
+        <i class="fa-solid fa-naira-sign"></i>
+        <div class="policy-text">
+            <strong>Deposit Required</strong>
+            <span>A ₦2,000 non-refundable deposit secures your slot. This goes toward your final balance — you pay the remaining ₦3,000 on the day.</span>
+        </div>
+    </div>
+
+    <div class="policy-item">
+        <i class="fa-regular fa-clock"></i>
+        <div class="policy-text">
+            <strong>Arrive On Time</strong>
+            <span>We hold your slot just for you. If you're more than 15 minutes late, we'll cancel and ask you to reschedule.</span>
+        </div>
+    </div>
+
+    <div class="policy-item">
+        <i class="fa-regular fa-times-circle"></i>
+        <div class="policy-text">
+            <strong>No Extra Guests</strong>
+            <span>We're a cozy home studio with limited space. Please come solo unless you've cleared a guest with us in advance.</span>
+        </div>
+    </div>
+
+    <div class="policy-item">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <div class="policy-text">
+            <strong>Rescheduling</strong>
+            <span>Life happens! Just contact us as early as possible if your plans change.</span>
+        </div>
+    </div>
+</div>
+
+            
+           </section>
+
+          </div>
+
+       </div>
    
     <script src="appointment.js"></script>
  <script src="https://kit.fontawesome.com/ebc2dac530.js" crossorigin="anonymous"></script>     

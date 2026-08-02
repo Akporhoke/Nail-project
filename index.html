@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit="cover">
     <title>Nail Tech</title>
     <link rel="stylesheet" href="nail.css">
+<link rel="stylesheet" href="skeleton.css">
+
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
    <div id="menu" class="menuOff"><ul>
@@ -25,7 +31,7 @@
         About Studio</li></a><br /><hr />         
       </div>
 
-      <li>Price</li><hr />
+
 
       <li>Reviews</li><hr />
 
@@ -39,10 +45,22 @@
                         <div class="logoSpace">
                            
                            <div>
-                                                         <img src="mainlogo.jpg" alt="" class="logo"> 
+                              <!-- ===== LOGO SKELETON ===== -->
+                              <div class="skeleton-wrapper">
+                                 <div class="skeleton skeleton-logo"></div>
+                              </div>
+                              <img src="mainlogo.jpg" alt="" class="logo real-content">
+
                            <div class="book-icon">
-                              <a href="nail-appointment.html"><i class="fa-solid fa-book" ></i></a>
-                           <i class="fa-solid fa-bars" id="book-icon-btn"></i></div>       
+                              <!-- ===== NAV ICONS SKELETON ===== -->
+                              <div class="skeleton-wrapper">
+                                 <div class="skeleton skeleton-nav-pill"></div>
+                              </div>
+                              <span class="real-content-inline-flex">
+                                 <a href="nail-appointment.html"><i class="fa-solid fa-book" ></i></a>
+                                 <i class="fa-solid fa-bars" id="book-icon-btn"></i>
+                              </span>
+                           </div>       
                         
                            </div>
        
@@ -64,12 +82,29 @@
                         <div class="white-line">  </div>
                         
 
-                        <p class="advert">
-                        Where your <span>Nails</span><br>
-                        meets perfect <span>Care</span>
+                        <!-- ===== HERO HEADLINE SKELETON ===== -->
+                        <div class="skeleton-wrapper">
+                           <div class="skeleton skeleton-text-line large"></div>
+                           <div class="skeleton skeleton-text-line large"></div>
+                        </div>
+                        <p class="advert real-content">
+                        Where Your <span>Nails</span><br>
+                        Meet Perfect <span>Care</span>
                         </p>
-                        <h3>PROFESSIONAL MANICURE, PEDICURE, NAIL DESIGN & FOOT CARE</h3>
-                        <div class="overlay">
+
+                        <!-- ===== SUBHEADING SKELETON ===== -->
+                        <div class="skeleton-wrapper">
+                           <div class="skeleton skeleton-text-line medium" style="margin: 1rem auto;"></div>
+                        </div>
+                        <h3 class="real-content">PROFESSIONAL MANICURE, PEDICURE, NAIL DESIGN & FOOT CARE</h3>
+
+                        <!-- ===== HERO 3 IMAGES SKELETON ===== -->
+<div class="skeleton-wrapper skeleton-hero-row">
+                           <div class="skeleton skeleton-img skeleton-img1"></div>
+                           <div class="skeleton skeleton-img skeleton-img2"></div>
+                           <div class="skeleton skeleton-img skeleton-img3"></div>
+                        </div>
+                        <div class="overlay real-content">
                            <div class="relief">
                            <img src="nails1.jpg" class="img1">
                            <img src="nails2.jpg" class="img2">
@@ -77,38 +112,75 @@
                         </div>
                         </div>
                      </div>
+                     
+<a href="#location" id="hero-nav-wrapper">
+    <i class="fa-solid fa-arrow-down"></i>
+</a>
+                     
                </div> 
                
                
-            <div class="About">
+            <div class="About" id="about">
                <div class="circle"></div>
                <h2>About Us</h2>
-                  <p>Nail Spice Studio is a premium beauty destination where elegance,precision
-                  and artistry converge. We offer carefully curated services in a space designed
-                  <br>to soothe and inspire. From bespoke nail design to flawless finishes    
-                  </p>
+
+                  <!-- ===== ABOUT TEXT SKELETON ===== -->
+                  <div class="skeleton-wrapper">
+                     <div class="skeleton skeleton-text-line medium"></div>
+                     <div class="skeleton skeleton-text-line medium"></div>
+                     <div class="skeleton skeleton-text-line small"></div>
+                  </div>
+                  <p class="real-content">In the bustling heart of [Lagos/Abuja], Nail Spice Studio was built for the woman who refuses to compromise. No rushed 20-minute turnovers, no questionable hygiene, and no one-size-fits-all colours. Just hospital-grade sterilization, premium Korean gels, and a 45-minute ritual that heals your cuticles and resets your mind because your hands work hard, and they deserve a weekly pause.                   </p>  <span class="tablet">
+    Discover more...
+</span>
+
 
                   <div class="circle2"></div>
-                  <img src="about.jpg" alt="">
+
+                  <!-- ===== ABOUT IMAGE SKELETON ===== -->
+                  <div class="skeleton-wrapper">
+                     <div class="skeleton skeleton-about-img"></div>
+                  </div>
+                  <img src="about.jpg" alt="" class="real-content">
+
                   <div class="circle3"></div>
                   <div class="circle4"></div>
             </div>
-            <div class="services">
+            
+           
+           <div id="location"></div>
+           
+            
+            <div class="services" id="">
                <h2>OUR SERVICES</h2>
                <div class="servicesDisplay">
+
+                  <!-- ===== CARD 1: PEDICURE ===== -->
                   <div class="wrapper">
-                     <div class="card">
+                     <div class="skeleton skeleton-card skeleton-wrapper">
+                        <div class="skeleton skeleton-badge"></div>
+                     </div>
+
+                     <div class="card real-content">
                         <div class="front-page">
                            <div class="card-info">
                               <h2 class="card-title">Pedicure</h2>
+                                                                                 <div class="info-badge"><span>⏱ 45 mins</span><strong></strong>||<span>₦5,000</span>
+                                                   </div>
                            </div>
                         </div>
 
                         <div class="back-page">
                            <div class="card-content">
-                              <h3>Pedicure</h3>
+
+                                                                                 <div class="info-badge">                              <h2>Pedicure</h2>
+                                                                                 <span>⏱ 45 mins</span>||<span>₦5,000</span>
+                                                   </div>
+                              
                               <p class="card-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquam totam quis voluptatibus excepturi aut consequatur vel nisi commodi dolores libero aspernatur quasi itaque, possimus sed sapiente consectetur fuga illo.
+                                    Give your feet the pampering they deserve. Our pedicure includes a 
+relaxing soak, nail shaping, cuticle care, and gentle exfoliation,
+leaving your feet soft, refreshed, and ready to shine.
                               </p>
 
                <div id="book-pedicure-btn" class="book-pedicure">
@@ -121,38 +193,66 @@
                      </div>
                      </div>
 
+                  <!-- ===== CARD 2: NAIL EXTENSION ===== -->
                   <div class="wrapper">
-                     <div class="card">
+                     <div class="skeleton skeleton-card skeleton-wrapper">
+                        <div class="skeleton skeleton-badge"></div>
+                     </div>
+
+                     <div class="card real-content">
                         <div class="front-page" id="extensions">
                            <div class="card-info">
                               <h2 class="card-title">Nail Extension</h2>
+                                                                                 <div class="info-badge"><span>⏱ 45 mins</span><strong>||</strong><span>₦5,000</span>
+                                                   </div>
                            </div>
                         </div>
                         <div class="back-page">
                            <div class="card-content">
-                              <h3>Manicure</h3>
+                                                            
+<div class="info-badge">
+                                 <h1>Manicure</h1>
+   <span>⏱ 45 mins</span>||
+   <span>₦5,000</span>
+                              </div> 
+                              
                               <p class="card-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquam totam quis voluptatibus excepturi aut consequatur vel nisi commodi dolores libero aspernatur quasi itaque, possimus sed sapiente consectetur fuga illo.
+                                   Want length and drama? Our nail extensions are sculpted to your 
+desired shape and finished with precision — durable, beautiful, 
+and made to turn heads.
                               </p>
-                                           
-                           </div>
+                                <div id="book-manicure-btn" class="book-pedicure">
+                                 <strong>Get your Manicure Done.</strong>
+                              </div>
                         </div>
                      </div>
                   </div>
+                  </div>
 
+                  <!-- ===== CARD 3: MANICURE WITH POLISH ===== -->
                   <div class="wrapper">
-                     <div class="card">
+                     <div class="skeleton skeleton-card skeleton-wrapper">
+                        <div class="skeleton skeleton-badge"></div>
+                     </div>
+
+                     <div class="card real-content">
                         <div class="front-page" id="with-polish">
                            <div class="card-info">
                               <h2 class="card-title">Manicure with polish</h2>
+                                                   <div class="info-badge"><span>⏱ 45 mins</span><strong>||</strong><span>₦5,000</span>
+                             </div>
                            </div>
                         </div>
 
                         <div class="back-page">
                            <div class="card-content">
-                              <h3>Manicure with polish</h3>
+
+                                                                                                               <div class="info-badge">  
+                                                                       <h1>Manicure with polish</h1>     <span>⏱ 45 mins</span>||<span>₦5,000</span>
+                                          </div>
                               <p class="card-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquam totam quis voluptatibus excepturi aut consequatur vel nisi commodi dolores libero aspernatur quasi itaque, possimus sed sapiente consectetur fuga illo.
+The classic treat. Nail shaping, cuticle care, and a smooth polish 
+finish in your color of choice. Simple, elegant, and always in style.
                               </p>
                               
                                 <div id="book-manicure-btn" class="book-pedicure">
@@ -165,20 +265,71 @@
                      </div>
                   </div>
 
+                  <!-- ===== CARD 4: MANICURE WITHOUT POLISH ===== -->
                   <div class="wrapper">
-                        <div class="card">
+                     <div class="skeleton skeleton-card skeleton-wrapper">
+                        <div class="skeleton skeleton-badge"></div>
+                     </div>
+
+                        <div class="card real-content">
                         <div class="front-page" id="without-polish">
                            <div class="card-info">
                               <h2 class="card-title">Manicure without Polish</h2>
+                   <div class="info-badge"><span>⏱ 45 mins</span>||<span>₦5,000</span>
+                             </div>
                            </div>
                         </div>
 
                         <div class="back-page">
                            <div class="card-content">
-                              <h3>Manicure without Polish</h3>
+                                                                                 <div class="info-badge">
+                                                  <h1>Manicure without Polish</h1
+                                                  >                                                                <span>⏱ 45 mins</span>||<span>₦5,000</span>
+                                                                                 </div>
                               <p class="card-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquam totam quis voluptatibus excepturi aut consequatur vel nisi commodi dolores libero aspernatur quasi itaque, possimus sed sapiente consectetur fuga illo.
+Perfect for the natural nail lover. We shape, buff, and condition 
+your nails and cuticles for a clean, healthy look — no polish, 
+all class.
                               </p>
+                              
+                                                              <div id="book-manicure-btn" class="book-pedicure">
+                                 <strong>Get your Manicure Done.</strong>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                  </div>
+                  
+                  
+                                    <div class="wrapper">
+                     <div class="skeleton skeleton-card skeleton-wrapper">
+                        <div class="skeleton skeleton-badge"></div>
+                     </div>
+
+                        <div class="card real-content">
+                        <div class="front-page" id="without-polish">
+                           <div class="card-info">
+                              <h2 class="card-title">Manicure without Polish</h2>
+                   <div class="info-badge"><span>⏱ 45 mins</span>||<span>₦5,000</span>
+                             </div>
+                           </div>
+                        </div>
+
+                        <div class="back-page">
+                           <div class="card-content">
+                                                                                 <div class="info-badge">
+                                                  <h1>Manicure without Polish</h1
+                                                  >                                                                <span>⏱ 45 mins</span>||<span>₦5,000</span>
+                                                                                 </div>
+                              <p class="card-description">
+Perfect for the natural nail lover. We shape, buff, and condition 
+your nails and cuticles for a clean, healthy look — no polish, 
+all class.
+                              </p>
+                              
+                                                              <div id="book-manicure-btn" class="book-pedicure">
+                                 <strong>Get your Manicure Done.</strong>
+                              </div>
                            </div>
                         </div>
                         </div>
@@ -187,16 +338,46 @@
 
                </div> 
             </div> 
-            <footer>
+            <footer id="footer">
                <h1>Make a Reservation</h1>
                <h2>Nail Spice</h2>
                <p>OPEN 7 DAYS A WEEK</p>
-                  <a href="nail-appointment.html"> <div class="book">BOOK AN <br /> APPOINTMENT</div></a>
+
+                  <!-- ===== BOOK APPOINTMENT BUTTON SKELETON ===== -->
+                  <div class="skeleton-wrapper">
+                     <div class="skeleton skeleton-button"></div>
+                  </div>
+                  <a href="nail-appointment.html" class="real-content"> <div class="book">BOOK AN <br /> APPOINTMENT</div></a>
+               
+               
+<!-- Replace your current phone/email block with this -->
+<!-- Replace your current phone/email block with this -->
+
+<div class="contact-info">
+    <a href="tel:+234XXXXXXXXXX">
+        <i class="fa-solid fa-phone"></i>
+        <span>+234 810 765 8145</span>
+    </a>
+    <a href="mailto:hello@nailspice.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>hello@nailspice.com</span>
+    </a>
+</div>
+
+
+               
                
                <section><h1>Follow Us</h1><br>
             
-               
-            <div class="icon-container">
+               <!-- ===== FOOTER ICONS SKELETON ===== -->
+               <div class="skeleton-icon-container skeleton-wrapper">
+                  <div class="skeleton skeleton-icon"></div>
+                  <div class="skeleton skeleton-icon"></div>
+                  <div class="skeleton skeleton-icon"></div>
+                  <div class="skeleton skeleton-icon"></div>
+               </div>
+
+            <div class="icon-container real-content flex">
                      
 
                <div class="icon">
@@ -238,8 +419,9 @@
                </div>
                </section>
             </footer>
+            <script src="skeleton.js"></script>
             <script src="nail.js"></script>
-            <script src="https://kit.fontawesome.com/ebc2dac530.js" crossorigin="anonymous"></script>
+
    </div>
 </div>
 </body>

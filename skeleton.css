@@ -1,0 +1,173 @@
+/* ============================================
+   SKELETON LOADING STYLES
+   ============================================ */
+
+/* Base skeleton shimmer effect */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(107, 62, 62, 0.15) 25%,
+        rgba(212, 168, 168, 0.35) 50%,
+        rgba(107, 62, 62, 0.15) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeletonShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== LOGO SKELETON (circle) ===== */
+.skeleton-logo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+/* ===== NAV ICONS SKELETON (pill shape) ===== */
+.skeleton-nav-pill {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+
+.skeleton-hero-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+body.loaded .skeleton-hero-row {
+    display: none;
+}
+
+/* ===== HERO TEXT SKELETON (lines) ===== */
+.skeleton-text-line {
+    height: 1.2rem;
+    margin: 0.5rem auto;
+    border-radius: 4px;
+}
+
+.skeleton-text-line.large {
+    height: 3rem;
+    max-width: 80%;
+}
+
+.skeleton-text-line.medium {
+    height: 1.5rem;
+    max-width: 60%;
+}
+
+.skeleton-text-line.small {
+    height: 1rem;
+    max-width: 40%;
+}
+
+/* ===== HERO IMAGES SKELETON (rotated cards) ===== */
+.skeleton-img {
+    border-radius: 0.5rem;
+}
+
+.skeleton-img1 {
+    width: 25%;
+    height: 12rem;
+    transform: rotate(-15deg);
+}
+
+.skeleton-img2 {
+    width: 25%;
+    height: 12rem;
+}
+
+.skeleton-img3 {
+    width: 25%;
+    height: 12rem;
+    transform: rotate(15deg);
+}
+
+/* ===== ABOUT IMAGE SKELETON ===== */
+.skeleton-about-img {
+    width: 30%;
+    height: 15rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+
+/* ===== SERVICE CARD SKELETON ===== */
+.skeleton-card {
+    width: 340px;
+    height: 540px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.skeleton-card .skeleton-badge {
+    width: 70%;
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+/* ===== FOOTER ICON SKELETON (circles) ===== */
+.skeleton-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.skeleton-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* ===== BUTTON SKELETON ===== */
+.skeleton-button {
+    width: 100%;
+    max-width: 320px;
+    height: 4rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+}
+
+/* ===== VISIBILITY TOGGLING ===== */
+.skeleton-wrapper {
+    display: block;
+}
+
+.real-content {
+    display: none;
+}
+
+/* When "loaded" class is added to body, swap visibility */
+body.loaded .skeleton-wrapper {
+    display: none;
+}
+
+body.loaded .real-content {
+    display: block;
+}
+
+/* For flex/inline elements that need different display when shown */
+body.loaded .real-content.flex {
+    display: flex;
+}
+
+body.loaded .real-content.inline-flex {
+    display: inline-flex;
+}
