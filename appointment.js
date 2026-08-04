@@ -21,11 +21,48 @@ let serviceCount = 1;
 
 // ======= SERVICE OPTIONS MAPPING =======
 const serviceOptions = {
-    "Manicure": ["No polish", "Regular polish", "Gel polish"],
-    "Pedicure": ["No polish", "Regular polish", "Gel polish"],
-    "Nail Extensions": ["Acrylic extensions", "Gel extensions"],
-    "Press-on Nails": [],
-    "Custom Nail Art": []
+    "Manicure": {
+        suboptions: [
+            {
+                label: "Polish Type",
+                options: ["No polish", "Regular polish", "Gel polish"]
+            },
+            {
+                label: "Design",
+                options: ["Solid color only", "Yes, I have a design in mind"]
+            }
+        ]
+    },
+    "Pedicure": {
+        suboptions: [
+            {
+                label: "Polish Type",
+                options: ["No polish", "Regular polish", "Gel polish"]
+            }
+        ]
+    },
+    "Nail Extensions": {
+        suboptions: [
+            {
+                label: "Extension Type",
+                options: ["Acrylic extensions", "Gel extensions"]
+            },
+            {
+                label: "Length",
+                options: ["Short", "Medium", "Long", "Extra-long"]
+            },
+            {
+                label: "Design",
+                options: ["Solid color only", "Yes, I have a design in mind"]
+            }
+        ]
+    },
+    "Press-on Nails": {
+        suboptions: []
+    },
+    "Custom Nail Art": {
+        suboptions: []
+    }
 };
 
 function createServiceDropdown(serviceNum, selectedValue = "") {
@@ -51,49 +88,56 @@ function createServiceDropdown(serviceNum, selectedValue = "") {
     return select;
 }
 
-function createSubOptionButtons(service, selectedValue = "") {
-    const options = serviceOptions[service] || [];
+function createSubOptionButtons(service, selectedValues = {}) {
+    const serviceConfig = serviceOptions[service];
+    const suboptions = serviceConfig?.suboptions || [];
     
-    if (options.length === 0) {
-        return null; // No sub-options for this service
+    if (suboptions.length === 0) {
+        return null;
     }
     
     const container = document.createElement("div");
     container.className = "suboption-container";
     
-    const label = document.createElement("label");
-    label.className = "suboption-label";
-    label.textContent = service === "Nail Extensions" ? "Extension Type:" : "Polish Type:";
-    container.appendChild(label);
-    
-    const optionsDiv = document.createElement("div");
-    optionsDiv.className = "suboption-options";
-    
-    options.forEach(option => {
-        const radioWrapper = document.createElement("div");
-        radioWrapper.className = "suboption-wrapper";
+    suboptions.forEach(suboptionGroup => {
+        const groupLabel = document.createElement("label");
+        groupLabel.className = "suboption-label";
+        groupLabel.textContent = suboptionGroup.label;
+        container.appendChild(groupLabel);
         
-        const input = document.createElement("input");
-        input.type = "radio";
-        input.name = `suboption-${Date.now()}`;
-        input.value = option;
-        input.className = "suboption-radio";
-        if (selectedValue === option) input.checked = true;
+        const optionsDiv = document.createElement("div");
+        optionsDiv.className = "suboption-options";
         
-        const labelEl = document.createElement("label");
-        labelEl.className = "suboption-label-text";
-        labelEl.textContent = option;
+        suboptionGroup.options.forEach(option => {
+            const radioWrapper = document.createElement("div");
+            radioWrapper.className = "suboption-wrapper";
+            
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = `suboption-${Date.now()}-${suboptionGroup.label}`;
+            input.value = option;
+            input.className = "suboption-radio";
+            
+            if (selectedValues[suboptionGroup.label] === option) {
+                input.checked = true;
+            }
+            
+            const labelEl = document.createElement("label");
+            labelEl.className = "suboption-label-text";
+            labelEl.textContent = option;
+            
+            radioWrapper.appendChild(input);
+            radioWrapper.appendChild(labelEl);
+            optionsDiv.appendChild(radioWrapper);
+        });
         
-        radioWrapper.appendChild(input);
-        radioWrapper.appendChild(labelEl);
-        optionsDiv.appendChild(radioWrapper);
+        container.appendChild(optionsDiv);
     });
     
-    container.appendChild(optionsDiv);
     return container;
 }
 
-function addServiceDropdown(selectedService = "", selectedOption = "") {
+function addServiceDropdown(selectedService = "", selectedDetails = {}) {
     serviceCount++;
     
     const serviceDiv = document.createElement("div");
@@ -130,7 +174,7 @@ function addServiceDropdown(selectedService = "", selectedOption = "") {
     serviceDiv.appendChild(select);
     
     // Add sub-options if service has them
-    const subOptions = createSubOptionButtons(selectedService, selectedOption);
+    const subOptions = createSubOptionButtons(selectedService, selectedDetails);
     if (subOptions) {
         serviceDiv.appendChild(subOptions);
     }
@@ -145,23 +189,19 @@ if (savedServices) {
     try {
         const services = JSON.parse(savedServices);
         if (Array.isArray(services) && services.length > 0) {
-            const isNewFormat = services[0] && typeof services[0] === 'object' && 'service' in services[0];
+            const firstService = services[0];
+            const firstSelect = servicesContainer.querySelector(".service-select");
+            firstSelect.value = firstService.service;
             
-            if (isNewFormat) {
-                const firstService = services[0];
-                const firstSelect = servicesContainer.querySelector(".service-select");
-                firstSelect.value = firstService.service;
-                
-                // Add first service's sub-options
-                const firstSuboptions = createSubOptionButtons(firstService.service, firstService.option);
-                if (firstSuboptions) {
-                    servicesContainer.querySelector(".service-section").appendChild(firstSuboptions);
-                }
-                
-                // Add remaining services
-                for (let i = 1; i < services.length; i++) {
-                    addServiceDropdown(services[i].service, services[i].option);
-                }
+            // Add first service's sub-options
+            const firstSuboptions = createSubOptionButtons(firstService.service, firstService.details || {});
+            if (firstSuboptions) {
+                servicesContainer.querySelector(".service-section").appendChild(firstSuboptions);
+            }
+            
+            // Add remaining services
+            for (let i = 1; i < services.length; i++) {
+                addServiceDropdown(services[i].service, services[i].details || {});
             }
         }
     } catch (e) {
@@ -194,10 +234,6 @@ addServiceBtn.addEventListener("click", (e) => {
 });
 
 // ======= DISABLE PAST DATES =======
-const today = new Date();
-today.setDate(today.getDate() + 2); // Add 1 day
-const minDate = today.toISOString().split('T')[0];
-dateElement.min = minDate;
 
 // ======= RESTRICT TIME PICKER TO BUSINESS HOURS =======
 timeElement.min = "08:00";
@@ -217,19 +253,27 @@ function isValidTime(time) {
 const submitForm = event => {
     event.preventDefault()
     
-    // Get selected services with sub-options
+    // Get selected services with all sub-options
     const serviceSections = servicesContainer.querySelectorAll(".service-section");
     const selectedServices = [];
     
     serviceSections.forEach(section => {
         const serviceSelect = section.querySelector(".service-select").value;
-        const suboptionRadio = section.querySelector("input[type='radio']:checked");
-        const suboption = suboptionRadio ? suboptionRadio.value : "";
+        const selectedDetails = {};
+        
+        // Get all selected radio buttons in this service section
+        const radios = section.querySelectorAll("input[type='radio']:checked");
+        radios.forEach(radio => {
+            // Extract the label name from the radio button name
+            const nameParts = radio.name.split('-');
+            const labelName = nameParts.slice(2).join('-');
+            selectedDetails[labelName] = radio.value;
+        });
         
         if (serviceSelect) {
             selectedServices.push({
                 service: serviceSelect,
-                option: suboption || null
+                details: selectedDetails
             });
         }
     });
@@ -249,10 +293,14 @@ const submitForm = event => {
 
     // Check if required sub-options are selected
     const hasEmptySuboptions = selectedServices.some(s => {
-        const hasSuboptions = serviceOptions[s.service].length > 0;
-        return hasSuboptions && !s.option;
+        const serviceConfig = serviceOptions[s.service];
+        const suboptions = serviceConfig?.suboptions || [];
+        return suboptions.length > 0 && Object.keys(s.details).length === 0;
     });
 
+    if (hasEmptySuboptions) {
+        return alert("Please complete all service details (polish type, length, design, etc.)")
+    }
     
     const phoneLength = phoneElement.length
     if (phoneLength < 11 || phoneLength > 12) {
@@ -288,6 +336,38 @@ const submitForm = event => {
 
     alert("YOU'LL BE CONTACTED IN 24HRS TO DISCUSS THE DETAILS OF YOUR APPOINTMENT")
 
+    // ======= SAVE APPOINTMENT RECORD TO HISTORY =======
+    const appointmentRecord = {
+        id: Date.now(),
+        fullName: FullName,
+        email: Email,
+        phone1: phoneElement,
+        phone2: phoneElement2,
+        services: selectedServices,
+        date: date,
+        time: time,
+        notes: note,
+        bookedAt: new Date().toLocaleString(),
+        status: "Pending"
+    };
+
+    // Get existing history or create new array
+    let appointmentHistory = JSON.parse(localStorage.getItem("appointmentHistory")) || [];
+
+    // Add new appointment
+    appointmentHistory.push(appointmentRecord);
+
+    // Save back to localStorage (limit to last 50 bookings to avoid bloat)
+    if (appointmentHistory.length > 50) {
+        appointmentHistory = appointmentHistory.slice(-50);
+    }
+    localStorage.setItem("appointmentHistory", JSON.stringify(appointmentHistory));
+
+    // Reload to show new appointment
+    setTimeout(() => {
+        location.reload();
+    }, 1500);
+
     // Save services to localStorage
     localStorage.setItem("selectedServices", JSON.stringify(selectedServices));
 
@@ -300,7 +380,8 @@ const submitForm = event => {
         date,
         time,
         note,
-        policyAgreed
+        policyAgreed,
+        appointmentRecord
     });
 };
 
@@ -323,3 +404,121 @@ const closePolicySummary = () => {
 
 policyBtn.addEventListener('click', showPolicySummary);
 closeBtn.addEventListener('click', closePolicySummary);
+
+// ======= APPOINTMENT HISTORY =======
+function displayLatestAppointment() {
+    const appointmentHistory = JSON.parse(localStorage.getItem("appointmentHistory")) || [];
+    
+    if (appointmentHistory.length === 0) {
+        return; // No appointments to display
+    }
+    
+    const latest = appointmentHistory[appointmentHistory.length - 1];
+    
+    // Check if appointment date has passed - auto-delete silently
+    const appointmentDate = new Date(latest.date);
+    appointmentDate.setHours(23, 59, 59, 999); // End of that day
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Start of today
+    
+    if (appointmentDate < today) {
+        // Date has passed - auto-delete without asking
+        appointmentHistory.pop();
+        localStorage.setItem("appointmentHistory", JSON.stringify(appointmentHistory));
+        
+        // Recursively check if there are older appointments to display
+        if (appointmentHistory.length > 0) {
+            displayLatestAppointment();
+        }
+        return;
+    }
+    
+    const appointmentSection = document.getElementById("latest-appointment-section");
+    const header = document.getElementById("latest-appointment-header");
+    const expandedContent = document.getElementById("latest-appointment-expanded");
+    
+    // Format date for display
+    const dateString = appointmentDate.toLocaleDateString('en-US', { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric' 
+    });
+    
+    // Update preview
+    document.getElementById("latest-appointment-preview-text").textContent = 
+        `${dateString} • ${latest.time}`;
+    
+    // Update full details
+    document.getElementById("detail-name").textContent = latest.fullName;
+    document.getElementById("detail-email").textContent = latest.email;
+    document.getElementById("detail-phone").textContent = latest.phone1 + 
+        (latest.phone2 ? ` / ${latest.phone2}` : "");
+    document.getElementById("detail-date").textContent = dateString;
+    document.getElementById("detail-time").textContent = latest.time;
+    document.getElementById("detail-notes").textContent = latest.notes || "None";
+    document.getElementById("detail-booked-at").textContent = latest.bookedAt;
+    
+    // Format services display
+    const servicesHtml = latest.services.map(s => {
+        let details = `<div class="service-item">• ${s.service}`;
+        if (Object.keys(s.details).length > 0) {
+            const detailsList = Object.entries(s.details)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(", ");
+            details += ` (${detailsList})`;
+        }
+        details += "</div>";
+        return details;
+    }).join("");
+    
+    document.getElementById("detail-services").innerHTML = servicesHtml;
+    
+    // Update status badge
+    const statusBadge = document.getElementById("detail-status");
+    statusBadge.textContent = latest.status;
+    statusBadge.className = `status-badge ${latest.status.toLowerCase()}`;
+    
+    // Show section and add click handler
+    appointmentSection.style.display = "block";
+    header.addEventListener("click", toggleAppointmentExpand);
+}
+
+function toggleAppointmentExpand() {
+    const section = document.getElementById("latest-appointment-section");
+    const expandedContent = document.getElementById("latest-appointment-expanded");
+    
+    section.classList.toggle("expanded");
+    
+    if (expandedContent.style.display === "none") {
+        expandedContent.style.display = "flex";
+    } else {
+        expandedContent.style.display = "none";
+    }
+}
+
+function deleteLatestAppointment() {
+    if (confirm("Are you sure you want to delete this appointment?")) {
+        let appointmentHistory = JSON.parse(localStorage.getItem("appointmentHistory")) || [];
+        
+        if (appointmentHistory.length > 0) {
+            appointmentHistory.pop(); // Remove the last appointment
+            localStorage.setItem("appointmentHistory", JSON.stringify(appointmentHistory));
+            
+            // Hide the section
+            const appointmentSection = document.getElementById("latest-appointment-section");
+            appointmentSection.style.display = "none";
+        }
+    }
+}
+
+// Attach delete button event listener
+const deleteBtn = document.getElementById("delete-appointment-btn");
+if (deleteBtn) {
+    deleteBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent triggering expand when clicking delete
+        deleteLatestAppointment();
+    });
+}
+
+// Load and display latest appointment on page load
+displayLatestAppointment();
