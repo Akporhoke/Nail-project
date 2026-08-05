@@ -233,6 +233,11 @@ addServiceBtn.addEventListener("click", (e) => {
     addServiceDropdown();
 });
 
+// ======= DISABLE PAST DATES =======
+const today = new Date();
+today.setDate(today.getDate() + 2); // Add 2 days
+const minDate = today.toISOString().split('T')[0];
+dateElement.min = minDate;
 
 // ======= RESTRICT TIME PICKER TO BUSINESS HOURS =======
 timeElement.min = "08:00";
