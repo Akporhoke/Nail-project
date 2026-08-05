@@ -949,8 +949,8 @@ i {
     padding: 1.2rem 1.5rem;
     box-shadow: 0 8px 24px rgba(107, 62, 62, 0.3);
     z-index: 9999;
-    max-width: 80%;
-    width: auto;
+    max-width: 85%;
+    width: 90%;
     animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 

@@ -46,7 +46,7 @@ function showAppointmentToast(appointment) {
                 toast.style.display = "none";
             }, 300);
         }
-    }, 8000);
+    }, 4000);
 }
 
 // Check for appointment notifications when page loads
