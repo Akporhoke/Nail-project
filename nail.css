@@ -1014,7 +1014,7 @@ i {
 }
 
 .toast-close {
-    width: auto;
+    width: 80%;
     padding: 0;
     background: none;
     border: none;
