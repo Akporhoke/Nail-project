@@ -984,11 +984,13 @@ i {
     display: flex;
     align-items: center;
     gap: 1rem;
+    width:80%;
 }
 
 .toast-icon {
     font-size: 1.8rem;
     flex-shrink: 0;
+    
 }
 
 .toast-text {
