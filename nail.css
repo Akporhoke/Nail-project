@@ -1,3 +1,5 @@
+
+
 :root {
     --clr-primary: rgb(200, 166, 177);
     --clr-icons: rgb(250, 112, 156);
@@ -933,4 +935,116 @@ i {
 .real-content-inline-flex{
     
     padding:1rem;
+}
+
+
+/* ======= APPOINTMENT REMINDER TOAST ======= */
+.appointment-toast {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #D4A8A8, #6B3E3E);
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 8px 24px rgba(107, 62, 62, 0.3);
+    z-index: 9999;
+    max-width: 90%;
+    width: auto;
+    animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.appointment-toast.hide {
+    animation: slideUp 0.3s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-2rem);
+    }
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toast-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.toast-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.toast-text strong {
+    font-family: cursive;
+    font-size: 1.1rem;
+    color: #FAF7F2;
+    margin: 0;
+}
+
+.toast-text p {
+    font-family: cursive;
+    font-size: 0.95rem;
+    color: rgba(250, 247, 242, 0.9);
+    margin: 0;
+}
+
+.toast-close {
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #FAF7F2;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.toast-close:hover {
+    transform: scale(1.2);
+}
+
+.toast-close:active {
+    transform: scale(0.9);
+}
+
+/* ======= MOBILE TOAST ======= */
+@media (max-width: 768px) {
+    .appointment-toast {
+        max-width: 95%;
+        padding: 1rem 1.2rem;
+        top: 1rem;
+    }
+
+    .toast-text strong {
+        font-size: 1rem;
+    }
+
+    .toast-text p {
+        font-size: 0.9rem;
+    }
 }

@@ -23,7 +23,10 @@ let serviceCount = 1;
 const serviceOptions = {
     "Manicure": {
         suboptions: [
-
+            {
+                label: "Polish Type",
+                options: ["No polish", "Regular polish", "Gel polish"]
+            },
             {
                 label: "Design",
                 options: ["Solid color only", "Yes, I have a design in mind"]
@@ -521,59 +524,5 @@ if (deleteBtn) {
     });
 }
 
-// ======= APPOINTMENT NOTIFICATIONS =======
-function checkAndNotifyAppointmentDay() {
-    const appointmentHistory = JSON.parse(localStorage.getItem("appointmentHistory")) || [];
-    
-    if (appointmentHistory.length === 0) return;
-    
-    const latest = appointmentHistory[appointmentHistory.length - 1];
-    const appointmentDate = new Date(latest.date);
-    appointmentDate.setHours(0, 0, 0, 0);
-    
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    // Check if today is the appointment day
-    if (appointmentDate.getTime() === today.getTime()) {
-        showAppointmentToast(latest);
-    }
-}
-
-function showAppointmentToast(appointment) {
-    const toast = document.getElementById("appointment-toast");
-    const toastTitle = document.getElementById("toast-title");
-    const toastMessage = document.getElementById("toast-message");
-    const toastClose = document.getElementById("toast-close");
-    
-    toastTitle.textContent = `Appointment Today at ${appointment.time}!`;
-    toastMessage.textContent = `${appointment.services[0].service} • ${appointment.fullName}`;
-    
-    // Show toast
-    toast.style.display = "block";
-    toast.classList.remove("hide");
-    
-    // Close button handler
-    toastClose.addEventListener("click", () => {
-        toast.classList.add("hide");
-        setTimeout(() => {
-            toast.style.display = "none";
-        }, 300);
-    });
-    
-    // Auto-hide after 8 seconds
-    setTimeout(() => {
-        if (toast.style.display === "block") {
-            toast.classList.add("hide");
-            setTimeout(() => {
-                toast.style.display = "none";
-            }, 300);
-        }
-    }, 8000);
-}
-
-// Check for appointment notifications when page loads
-checkAndNotifyAppointmentDay();
-
 // Load and display latest appointment on page load
-displayLatestAppointment();;
+displayLatestAppointment();
